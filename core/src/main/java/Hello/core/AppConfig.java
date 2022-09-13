@@ -14,17 +14,33 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
+
+
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()
+
+    //call AppConfig.memberService
+    //call AppConfig.memberRepository
+    //call AppConfig.memberRepository
+    //call AppConfig.orderService
+    //call AppConfig.memberRepository
+
+    //call AppConfig.memberService
+    //call AppConfig.memberRepository
+    //call AppConfig.orderService
+    
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
     @Bean
     public MemoryMemberRepository memberRepository() {
-        return new MemoryMemberRepository();
+        System.out.println("call AppConfig.memberRepository"); return new MemoryMemberRepository();
     }
     @Bean
     public OrderService orderService(){
-        return new OrderServiceImpl(memberRepository(), new FixDiscountPolicy());
+        System.out.println("call AppConfig.orderService"); return new OrderServiceImpl(memberRepository(), new FixDiscountPolicy());
     }
 
     @Bean
