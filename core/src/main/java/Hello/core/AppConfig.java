@@ -28,7 +28,7 @@ public class AppConfig {
     //call AppConfig.memberService
     //call AppConfig.memberRepository
     //call AppConfig.orderService
-    
+
     @Bean
     public MemberService memberService(){
         System.out.println("call AppConfig.memberService");
